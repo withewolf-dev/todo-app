@@ -28,14 +28,14 @@ export default class App extends Component {
     }
     this.handlechange=this.handlechange.bind(this)
   }
-  handlechange(){
-    console.log("change",)
+  handlechange(id){
+    console.log("change",id)
   }
 
   render() {
     const todoitems = this.state.todos.map(items => (
           <Todolist
-             handleChange={this.handlechange}
+             handleChange={() =>this.handlechange(items.id)}
              key={items.id}
              item={items.text}
              done={items.completed}
